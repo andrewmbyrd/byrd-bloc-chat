@@ -10,12 +10,13 @@
          $stateProvider
             .state("home", {
                 url:'/',
+                controller: "homeCtrl as home",
                 templateUrl: '/templates/home.html'
          });
      }
  
  
      angular
-         .module('byrd-bloc-chat', ['ui.router'])
+         .module('byrd-bloc-chat', ['ui.router',"firebase"])
          .config(config);
  })();

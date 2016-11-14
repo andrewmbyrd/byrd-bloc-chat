@@ -1,7 +1,8 @@
 (function(){
-    function homeCtrl(){
+    function homeCtrl(Room){
         
-        this.chatRooms = ["Room 1", "My Room", "Cool Room"];
+        //this.chatRooms = ["Room 1", "My Room", "Cool Room"];
+        this.chatRooms = Room;
         
     }
     

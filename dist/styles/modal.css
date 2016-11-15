@@ -6,6 +6,7 @@
     border-radius: 10px;
     text-align: center;
     position: relative;
+    z-index: 5000;
 }
 
 .box h3{
@@ -30,15 +31,21 @@ input[type=text]{
     top: 60px;
 }
 
+.button:hover{
+    cursor: pointer;
+}
 
 .button-fail{
     left: -50px;
     background: rgba(180, 40, 180, 0.48);
-    padding: 5px;
+    
 }
 
 
 .button-success{
     left: 65px;
+    background: rgba(180,40,180,0.8);
+    font-weight: bold;
 }
+
 

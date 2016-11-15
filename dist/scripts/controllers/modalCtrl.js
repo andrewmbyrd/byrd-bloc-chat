@@ -1,21 +1,11 @@
 (function (){
-    function modalCtrl($uibModal, Room){
-    
-        this.open = function(){
-            $uibModal.open({
-            templateUrl: "/templates/modal.html",
-            
-            })
-            
-        }
+    function modalCtrl(buttons){
         
-        this.submit = Room.add;
-        
-        this.roomName="";
+        this.button=buttons;
         
     }
     angular
         .module("byrd-bloc-chat")
-        .controller("modalCtrl", ["$uibModal", "Room", modalCtrl]);
+        .controller("modalCtrl", ["buttons", modalCtrl]);
  
 })();

@@ -1,6 +1,9 @@
 (function() {
   function Room($firebaseArray) {
       
+      /*
+      *@ desc rooms is a firebase array object which references ref
+      */
       var ref = firebase.database().ref().child("rooms");
       var rooms = $firebaseArray(ref);
       
@@ -9,10 +12,17 @@
       *@args a room name
       */
       var addRoom = function(newRoomName) {
-          rooms.$add({name: newRoomName});
+          if(newRoomName == ""){
+              alert("Please enter a room name");
+          }else{
+              rooms.$add({name: newRoomName});
+          }
       };
       
       return {
+          /*
+          *@desc all is an object that is the list of rooms. add is a function that adds a room
+          */
           all: rooms,
           add: addRoom
       };

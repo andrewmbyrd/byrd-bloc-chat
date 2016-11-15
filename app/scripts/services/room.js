@@ -1,5 +1,5 @@
 (function() {
-  function Room($firebaseArray) {
+  function Room($firebaseArray, buttons) {
       
       /*
       *@ desc rooms is a firebase array object which references ref
@@ -16,7 +16,18 @@
               alert("Please enter a room name");
           }else{
               rooms.$add({name: newRoomName});
+              buttons.close();
+              
           }
+      };
+      
+      /*
+      *@desc removes a room from the array
+      *@args the room object in scope
+      */
+      
+      var removeRoom = function($scope){
+          rooms.$remove($scope);
       };
       
       return {
@@ -24,7 +35,8 @@
           *@desc all is an object that is the list of rooms. add is a function that adds a room
           */
           all: rooms,
-          add: addRoom
+          add: addRoom,
+          remove: removeRoom
       };
     
       
@@ -33,5 +45,5 @@
 
   angular
     .module('byrd-bloc-chat')
-    .factory('Room', ['$firebaseArray', Room]);
+    .factory('Room', ['$firebaseArray', 'buttons', Room]);
 })();

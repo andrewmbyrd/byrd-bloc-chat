@@ -48,9 +48,26 @@
 }
 
 .room-list li{
+    box-sizing: border-box;
+    width: 260px;
     color: darkgray;
+    margin-bottom: 15px;
+
+}
+
+span.remove{
+    position: absolute;
+    right: 20px;
     
 }
+
+span.remove:hover{
+    font-weight: bold;
+    font-size: 1.4rem;
+    transform: translate(4px, -5px);
+    
+}
+
 .chat-room:hover{
     cursor: pointer;
 }

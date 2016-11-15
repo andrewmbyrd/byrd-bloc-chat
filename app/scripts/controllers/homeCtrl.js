@@ -2,6 +2,7 @@
     function homeCtrl(Room){
         
         this.chatRooms = Room.all;
+        this.remove = Room.remove;
         
     }
     

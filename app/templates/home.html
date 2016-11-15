@@ -4,8 +4,8 @@
     <div class = "new-room-button clearfix" ng-controller ="modalCtrl as modal" ng-click = "modal.button.open()">
         New Room
     </div>
-    <ul class = "room-list" ng-repeat = "room in home.chatRooms">
-        <li class = "chat-room">{{room.name}}</li>
+    <ul class = "room-list">
+        <li class="chat-room"  ng-repeat="room in home.chatRooms" ng-mouseover="hovered=true" ng-mouseleave = "hovered=false">{{room.name}}<span class="remove" ng-click="home.remove(room)" ng-show="hovered">x</span></li>
     </ul>
 </nav>
 

@@ -1,0 +1,12 @@
+<main class = "modal" ng-controller = "modalCtrl as modal">
+    <div class = "box">
+        <h3>Create a new chat room</h3>
+        <form class="room-adder" ng-submit="modal.submit()">
+            <input type = "text" placeholder = "Enter a room name" autofocus/ ng-model="modal.roomName">
+            <div class = "modal-controls">
+                <div class="button button-fail" id="jim">Cancel</div>
+                <button class="button button-success">Submit</button> <!-- Look up proper attributes -->
+            </div>
+        </form>
+    </div>
+</main>

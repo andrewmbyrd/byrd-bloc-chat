@@ -17,6 +17,6 @@
  
  
      angular
-         .module('byrd-bloc-chat', ['ui.router',"firebase"])
+         .module('byrd-bloc-chat', ['ui.router',"firebase", "ui.bootstrap"])
          .config(config);
  })();

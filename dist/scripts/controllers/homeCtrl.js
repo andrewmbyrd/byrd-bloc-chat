@@ -1,12 +1,11 @@
 (function(){
     function homeCtrl(Room){
         
-        //this.chatRooms = ["Room 1", "My Room", "Cool Room"];
-        this.chatRooms = Room;
+        this.chatRooms = Room.all;
         
     }
     
     angular
         .module("byrd-bloc-chat")
-        .controller("homeCtrl", homeCtrl);
+        .controller("homeCtrl", ['Room', homeCtrl]);
 })();

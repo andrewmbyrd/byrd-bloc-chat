@@ -1,9 +1,12 @@
 
 <nav class = "navigation">
-        <h1 class = "main-name">Bloc Chat</h1>
-        <ul class = "room-list" ng-repeat = "room in home.chatRooms">
-            <li class = "chat-room">{{room}}</li>
-        </ul>
+    <h1 class = "main-name clearfix">Bloc Chat</h1>
+    <div class = "new-room-button clearfix" ng-controller ="modalCtrl as modal" ng-click = "modal.open()">
+        New Room
+    </div>
+    <ul class = "room-list" ng-repeat = "room in home.chatRooms">
+        <li class = "chat-room">{{room}}</li>
+    </ul>
 </nav>
 
 <main class = "home">

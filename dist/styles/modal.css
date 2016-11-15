@@ -1,0 +1,44 @@
+.box{
+    width: 350px;
+    height: 175px;
+    background: rgba(60,181,50,0.7);
+    margin: 200px auto;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.box h3{
+    padding: 10px;
+    color: darkviolet;
+    text-shadow: 1px 1px purple;
+}
+
+.room-adder{
+    height: 115px;
+}
+
+input[type=text]{
+    width: 300px;
+     
+}
+
+.button{
+    width: 80px;
+    display: inline;
+    position: relative;
+    top: 60px;
+}
+
+
+.button-fail{
+    left: -50px;
+    background: rgba(180, 40, 180, 0.48);
+    padding: 5px;
+}
+
+
+.button-success{
+    left: 65px;
+}
+

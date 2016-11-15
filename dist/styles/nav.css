@@ -4,21 +4,47 @@
     left: 0;
     top: 0;
     bottom: 0;
-    background: rgba(150,255,150,0.5);
+    background: rgba(150,255,150,0.34);
     text-align: left;
     border: 2px solid rgb(30,100,30);
+    
     
 }
 
 .navigation h1{
     color: rgb(150,60, 150);
     text-shadow: 1px 2px green;
+    width: 160px;
+    position: relative;
+    float:left;
+    
     
 }
 
+.new-room-button{
+    
+    float: right;
+    width: 120px;
+    height: 26px;
+    position: relative;
+    margin: 21px 10px 20px 0;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(60,150,60);
+    background: purple;
+    border-radius: 15px;
+    border: 1px solid darkgreen;
+    
+}
 
+.new-room-button:hover{
+    cursor: pointer;
+    
+}
 .room-list{
     list-style: none;
+    float:left
 }
 
 .room-list li{
@@ -28,4 +54,16 @@
 .chat-room:hover{
     cursor: pointer;
 }
-    
+  
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+}
+
+.clearfix::after{
+    clear: both;
+}
+
+.button:hover{
+    cursor: pointer !important;
+}

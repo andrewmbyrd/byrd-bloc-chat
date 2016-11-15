@@ -6,21 +6,17 @@
     <link rel="stylesheet" href="/styles/home.css">
     <link rel = "stylesheet" type = "text/css" href = "/styles/normalize.css">
     <link rel = "stylesheet" type = "text/css" href = "/styles/nav.css">
+    <link rel = "stylesheet" type = "text/css" href = "/styles/modal.css">
     
     
 </head>
 <body>
-    <nav class = "navigation" ng-controller = "homeCtrl as home">
-        <h1 class = "main-name">Bloc Chat</h1>
-        <ul class = "room-list" ng-repeat = "room in home.chatRooms">
-            <li class = "chat-room">{{room}}</li>
-        </ul>
-    </nav>
     
     <ui-view></ui-view>
     
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src = "/scripts/ui-bootstrap-tpls-2.2.0.min.js"></script>
     
  ...
     <script src = "https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
@@ -29,6 +25,8 @@
     <script src="/scripts/app.js"></script>
     <script src = "/scripts/controllers/homeCtrl.js"></script>
     <script src = "/scripts/services/room.js"></script>
+    <script src = "/scripts/controllers/modalCtrl.js"></script>
+    
     <script>
         var config = {
             apiKey: "AIzaSyDKLj7u2cDPAUX1SN1VISmtexgn9QFv3NA" ,

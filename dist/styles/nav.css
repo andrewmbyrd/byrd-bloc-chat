@@ -42,6 +42,10 @@
     cursor: pointer;
     
 }
+
+.chat-room a{
+    text-decoration: none;
+}
 .room-list{
     list-style: none;
     float:left

@@ -8,10 +8,10 @@
               });
          
          $stateProvider
-            .state("home", {
-                url:'/',
+            .state("conversation", {
+                url:'/conversation',
                 controller: "homeCtrl as home",
-                templateUrl: '/templates/home.html'
+                templateUrl: '/templates/conversation.html'
          });
      }
  

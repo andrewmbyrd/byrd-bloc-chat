@@ -14,10 +14,20 @@
 
 .message-list{
     list-style: none;
+    position: relative;
+    padding-left: 0;
+    border: 2px solid purple;
 }
 
 .message-list li:nth-child(even){
-    background: pink;
+    background: lavender;
+}
+
+.message-list li:nth-child(odd){
+    background: rgba(100,50, 180, 0.4);
+    font-weight: 600;
+    color: darkgreen;
+    
 }
 .message-input{
     display: block;
@@ -40,3 +50,24 @@
 .message-send:hover{
     cursor: pointer;
 }
+
+.username{
+    padding: 4px 0 0 3px;
+    margin-top: 0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.message-content{
+    padding-left: 3px;
+    margin: 0;
+    padding-bottom: 2px;
+    width: 95%;
+    float:left;
+
+}
+.message-time{
+    margin-bottom: 0;
+  
+}
+

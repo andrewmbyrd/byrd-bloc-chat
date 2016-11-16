@@ -1,5 +1,5 @@
 (function() {
-  function Messages($firebaseArray, Room) {
+  function Messages($firebaseArray) {
         
       //instantiates the message object we're going to return
       var message = {};
@@ -17,7 +17,7 @@
       message.username = "Test User";
       message.content = "";
       message.sentAt = "10:00";
-      message.roomID = undefined;;
+      message.roomID = undefined;
       message.all = messagesList;
       message.page = [];
       
@@ -41,11 +41,11 @@
       }
       
       /*
-      *@desc a method to sort messages by roomID
+      *@desc a method to sort messages by roomID and store them in message.page
+      *@args the roomID of the room we're currently in
       */
       message.getByRoomID = function(roomID){
-          var thisList = messagesRef.orderByChild(roomID);
-          console.log(thisList);
+          messagesRef.orderByChild("roomID").equalTo(roomID).on("value", function(snapshot){message.page = snapshot.val();});
           
       }
       /*
@@ -58,6 +58,9 @@
               sentAt: this.sentAt,
               roomID: this.roomID
           };
+          
+          console.log(currentMessage);
+          console.log(message.page);
           messagesList.$add(currentMessage);
           message.clear();
           
@@ -69,5 +72,5 @@
 
   angular
     .module('byrd-bloc-chat')
-    .factory('Messages', ['$firebaseArray',"Room", Messages]);
+    .factory('Messages', ['$firebaseArray', Messages]);
 })();

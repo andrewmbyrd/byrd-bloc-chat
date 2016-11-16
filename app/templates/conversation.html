@@ -1,0 +1,14 @@
+<main class="home">
+    <h1>{{home.Room.currentRoom.name}}</h1>
+    <ol class="message-list">
+        <li class="message" ng-repeat="message in home.message.page">
+            <h4 class="username">{{message.username}}</h4>
+            <p class="message-content">{{message.content}}</p>
+            <span class="message-time">{{message.sentAt}}</span>
+        </li>
+    </ol>
+    <form class = "message-form" ng-submit = "home.message.send()">
+        <input class="message-input" type="text" ng-model = "home.message.content" autofocus/>
+        <button class="message-send" type="button" ng-click = "home.message.send()">SEND</button>
+     </form>
+</main>

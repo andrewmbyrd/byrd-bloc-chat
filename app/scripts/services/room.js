@@ -1,5 +1,5 @@
 (function() {
-  function Room($firebaseArray, buttons) {
+  function Room($firebaseArray, buttons, Messages) {
       
       
       var Room={};
@@ -39,9 +39,16 @@
       
       Room.all = rooms;
       
+      /*
+      *@desc this function takes the scope of the room name that was clicked, sets the current room
+      *to that room, and sets messages' room Id to that room's ID
+      *@args a room object
+      */
       Room.setRoom = function($scope){
           Room.currentRoom=$scope;
-          console.log($scope);
+          Messages.roomID = Room.currentRoom.$id;
+          Messages.getByRoomID(Messages.roomID);
+          console.log(Messages.page);
           
       }
       
@@ -54,5 +61,5 @@
 
   angular
     .module('byrd-bloc-chat')
-    .factory('Room', ['$firebaseArray', 'buttons', Room]);
+    .factory('Room', ['$firebaseArray', 'buttons', "Messages", Room]);
 })();

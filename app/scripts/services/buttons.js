@@ -1,10 +1,18 @@
 (function() {
   function buttons($uibModal){
-      
+      /*
+      *@desc instantiates the object that will be returned
+      */
       var buttons={};
       
+      /*
+      *@desc at first, there is no modal object associated with the button
+      */
       buttons.modalObject={};
       
+      /*
+      *@desc opens a modal and associates this modal object with the button
+      */
       buttons.open = function(){
                         var modalInstance= $uibModal.open({
                         bindToController: true,
@@ -18,6 +26,9 @@
                         buttons.modalObject = modalInstance;
                     };
       
+      /*
+      *@desc closes the modal object
+      */
       buttons.close = function(){
           buttons.modalObject.dismiss("Cancel");
       }

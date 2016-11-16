@@ -1,5 +1,5 @@
 (function() {
-  function Messages($firebaseArray) {
+  function Messages($firebaseArray, $cookies) {
         
       //instantiates the message object we're going to return
       var message = {};
@@ -14,9 +14,9 @@
       /*
       *@desc these variables build out our message object. They will be populated by user entry and state capture later
       */
-      message.username = "Test User";
+      message.username = $cookies.get("blocChatCurrentUser");
       message.content = "";
-      message.sentAt = "10:00";
+      message.sentAt = "";
       message.roomID = undefined;
       message.all = messagesList;
       message.page = [];
@@ -36,10 +36,8 @@
       *@desc a function to make the message empty again after having been sent
       */
       message.clear = function(){
-            message.username = "";
             message.content = "";
             message.sentAt = "";
-            message.roomID = ""; 
       }
       
       /*
@@ -52,9 +50,28 @@
       }
       
       /*
-      @desc sends the message by appending it to the end of the array of messages for the room
+      *@desc this function gets time right now. it will be evaluated at time of message sending
+      */
+      message.establishTime = function(){
+          var totalTimeElapsed = Date.now()+(new Date().getTimezoneOffset())*60000;
+          var millisecondsToday = totalTimeElapsed % 86400000;
+          var minutesToday = parseInt(millisecondsToday/1000/60);
+          
+          var hours = parseInt(minutesToday/60);
+          var minutes = parseInt(minutesToday%60);
+          
+          if(minutes<10){
+              minutes="0"+minutes;
+          }
+          
+          message.sentAt = hours+":"+minutes;
+      }
+      
+      /*
+      @desc sends the message by appending it to the end of the array of messages
       */
       message.send = function(){
+          message.establishTime();
           var currentMessage = {
               username: this.username,
               content: this.content,
@@ -75,5 +92,5 @@
 
   angular
     .module('byrd-bloc-chat')
-    .factory('Messages', ['$firebaseArray', Messages]);
+    .factory('Messages', ['$firebaseArray', "$cookies", Messages]);
 })();

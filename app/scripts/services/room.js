@@ -1,17 +1,22 @@
 (function() {
   function Room($firebaseArray, buttons) {
       
+      
+      var Room={};
       /*
       *@ desc rooms is a firebase array object which references ref
       */
       var ref = firebase.database().ref().child("rooms");
       var rooms = $firebaseArray(ref);
       
+      
       /*
-      *@desc an abstract method that will use $add to add room to the rooms array
+      *@desc amethod that will use $add to add room to the rooms array
       *@args a room name
       */
-      var addRoom = function(newRoomName) {
+      
+      
+      Room.addRoom = function(newRoomName) {
           if(newRoomName == ""){
               alert("Please enter a room name");
           }else{
@@ -26,18 +31,22 @@
       *@args the room object in scope
       */
       
-      var removeRoom = function($scope){
+      Room.removeRoom = function($scope){
           rooms.$remove($scope);
       };
       
-      return {
-          /*
-          *@desc all is an object that is the list of rooms. add is a function that adds a room
-          */
-          all: rooms,
-          add: addRoom,
-          remove: removeRoom
-      };
+      Room.currentRoom = undefined;
+      
+      Room.all = rooms;
+      
+      Room.setRoom = function($scope){
+          Room.currentRoom=$scope;
+          console.log($scope);
+          
+      }
+      
+      
+      return Room;
     
       
       

@@ -1,12 +1,13 @@
 (function(){
-    function homeCtrl(Room){
+    function homeCtrl(Room, Messages){
         
-        this.chatRooms = Room.all;
-        this.remove = Room.remove;
+        this.Room = Room;
+        
+        this.message=Messages;
         
     }
     
     angular
         .module("byrd-bloc-chat")
-        .controller("homeCtrl", ['Room', homeCtrl]);
+        .controller("homeCtrl", ['Room', "Messages", homeCtrl]);
 })();

@@ -4,7 +4,7 @@
         /*
         *@ this allows us to update the room list
         */
-        this.submit = Room.add;
+        this.submit = Room.addRoom;
         
         /*
         *@desc we bind this with ng-model when the form is submitted

@@ -1,6 +1,9 @@
 (function (){
     function modalCtrl(buttons){
         
+        /*
+        *@desc allows interaction with the buttons on the modal
+        */
         this.button=buttons;
         
     }

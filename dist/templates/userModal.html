@@ -1,0 +1,10 @@
+<section class="screen-cover">
+    <div class="username-entry">
+        <h3>Please Set a Username</h3>
+        <p>This username will be visible to others as you chat. (don't be offensive unless your buds in the chat won't mind lmoa)</p>
+        <form class="username-form" ng-submit="cookie.acceptUserName()">
+            <input class ="username-adder" type="text" placeholder="Enter your username" autofocus ng-model="cookie.userName">
+            <button type="button" class="username-button" ng-click="cookie.acceptUserName()">Set Username</button>
+        </form>
+    </div>
+</section>

@@ -22,17 +22,19 @@
       message.page = [];
       
       
-      
+      /*
+      *@desc this method is called in the Room factory. it sets the message room id to the current room *ID
+      *@args a room object.
+      */
       message.setRoomID = function(roomObject){
           if(roomObject){
               message.roomID = roomObject.$id;
           }
       }
+      
       /*
       *@desc a function to make the message empty again after having been sent
       */
-      
-      
       message.clear = function(){
             message.username = "";
             message.content = "";
@@ -48,6 +50,7 @@
           messagesRef.orderByChild("roomID").equalTo(roomID).on("value", function(snapshot){message.page = snapshot.val();});
           
       }
+      
       /*
       @desc sends the message by appending it to the end of the array of messages for the room
       */

@@ -24,8 +24,20 @@
                         });
                         
                         buttons.modalObject = modalInstance;
-                    };
+        };
       
+      
+      buttons.openUsernameModal = function(){
+          var nameEntry = $uibModal.open({
+                templateUrl: "/templates/userModal.html",
+                bindToController: true,
+                controller: "cookieCtrl",
+                controllerAs: "cookie",
+          });
+          
+          buttons.modalObject = nameEntry;
+          
+      }
       /*
       *@desc closes the modal object
       */

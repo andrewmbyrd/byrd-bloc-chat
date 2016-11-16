@@ -1,0 +1,60 @@
+.screen-cover{
+    background: rgba(30,30,30,0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4000;
+}
+
+.username-entry{
+    width: 375px;
+    height: 200px;
+    background: rgba(60,181,50,0.7);
+    margin: 200px auto;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 5000;
+    
+}
+
+.username-entry h3{
+    padding: 10px;
+    color: darkviolet;
+    text-shadow: 1px 1px purple;
+}
+
+.username-entry p{
+    padding:0 5px;
+    font-weight: bold;
+}
+form.username-form{
+    height: 100px;
+    width: 375px;
+    text-align: center;
+}
+
+.username-adder{
+    width: 90%;
+    margin-bottom: 5px;
+}
+
+
+button.username-button{
+    width: 80%;
+    height: 35px;
+    display: inline;
+    position: relative;
+    margin: 0 auto;
+    
+}
+
+
+.username-button{
+    background: rgba(180,40,180,0.8);
+    font-weight: bold;
+}
+
+

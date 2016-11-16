@@ -15,6 +15,16 @@
       *@args a room name
       */
       
+      /*
+      *@ holds the current room object
+      */
+      Room.currentRoom = undefined;
+      
+      /*
+      *@stores the list of rooms from the firebase array
+      */
+      Room.all = rooms;
+      
       
       Room.addRoom = function(newRoomName) {
           if(newRoomName == ""){
@@ -35,9 +45,7 @@
           rooms.$remove($scope);
       };
       
-      Room.currentRoom = undefined;
       
-      Room.all = rooms;
       
       /*
       *@desc this function takes the scope of the room name that was clicked, sets the current room
